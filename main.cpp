@@ -9,6 +9,8 @@ create a single main.cpp that contains code samples and implementations of each 
 #include <cassert>
 #include <stack>
 #include <set>
+#include <utility>
+#include <map>
 using namespace std; 
 
 //Credit https://www.geeksforgeeks.org/passing-vector-constructor-c/ clarifications added
@@ -57,6 +59,9 @@ class MyClassVector3
         {
         }
 };
+
+typedef map<string, int> MapT;
+typedef MapT::const_iterator MapIterT;
 
 int main() 
 {
@@ -197,19 +202,54 @@ int main()
 
 
     /****COSC-1437****Pair_Structure*/
-    //Write the code as presented in: 4. std::pair structure
+    // A Pair Structure holds one object of type T1 & another of type T2
+    pair< string, string > strstr;  // Pair with two objects set as strings
+    strstr.first = "Hello";
+    strstr.second = "World";
 
-    //Write comments that help one better understand what the code is doing.
+    pair< int, string > intstr;     // Pair with two objects set as string and int
+    intstr.first = 1;
+    intstr.second = "one";
+
+    pair< string, int > strint( "two", 2 ); // Pair with two objects set as int and string
+    assert( strint.first == "two" );
+    assert( strint.second == 2 );
+
 
     /****COSC-1437**** Map_Insert*/
-    //Write the code as presented in: 14. std::map::insert
+    // A map stores pairs of a key type and a value type. 
+    // Provides fast access to a value when given a key.
+    // Uses trees, so fast means 0(log(num items in map))
+    MapT amap;
+    pair< MapIterT, bool > result =
+        amap.insert( make_pair( "Fred", 45 ) );
 
-    //Write comments that help one better understand what the code is doing.
+        assert( result.second == true );
+        assert ( result.first -> second == 45 );
+
+        result = amap.insert( make_pair( "Fred", 54 ) );
+
+        // Fred was already in the map, and result.first
+        // simply points there now:
+        assert( result.second == false );
+        assert( result.first -> second == 45 );
 
     /****COSC-1437****Map_Summary*/
-    //Write the code as presented in: 16. Map summary
+    map< string, string > phone_book;
+    phone_book[ "\n\n411" ] = "Directory";
+    phone_book[ "911" ] = "Emergency";
+    phone_book[ "508-678-2811" ] = "BCC";
+    if ( phone_book.find( "411" ) != phone_book.end() )
+    {
+      phone_book.insert( make_pair( string( "411" ), string( "Directory" )));
+    }
+    assert( phone_book.size() == 3 );
+    map< string, string >::const_iterator its;
+    for ( its = phone_book.begin(); its != phone_book.end(); ++its)
+      {
+        cout << its -> first << " " << its -> second << endl;
+      }
 
-    //Write comments that help one better understand what the code is doing.
 
     /****COSC-1437**** Sort_Algorithm*/
     //Write the code as presented in: 23. sort example
