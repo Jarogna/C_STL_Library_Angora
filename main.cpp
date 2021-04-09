@@ -28,6 +28,33 @@ class MyClassVector1
       } 
 };
 
+class MyClassVector2
+{
+      vector<int> vec; // Private by default
+  public:
+      MyClassVector2 (vector<int> v) // Parameterized constructor
+      {
+      }
+      void print()
+      {
+        /// print the value of the vector
+        for (int i = 0; i < vec.size(); i++)
+        {
+          cout << vec[i] << " ";
+        }      
+      }
+};
+
+class MyClassVector3
+{
+      vector<int> vec; // Private by default
+  public:
+      MyClassVector3(vector<int>& arr) // Assign the reference of stl container
+        : vec(arr)
+        {
+        }
+};
+
 int main() 
 {
     /****COSC-1437***Vectors*/ 
@@ -96,9 +123,40 @@ int main()
         obj.print(); 
       
       //Continue with MyClassVector2 and MyClassVector3
+   cout << "\nInitializeing_Vector_using_Initializer_List" << endl; 
+    vector<int> vec2; 
+        for (int i = 1; i <= 5; i++) 
+            vec2.push_back(i); 
+        MyClassVector2 obj2(vec); 
+        obj.print(); 
 
+   cout << "\nVector_Reference" << endl; 
+    vector<int> vec3; 
+        for (int i = 1; i <= 5; i++) 
+            vec3.push_back(i); 
+        MyClassVector1 obj3(vec); 
+        obj.print(); 
     /****COSC-1437***STL_Iterators*/ 
+    vector< int > vint(10);
+    vint [ 0 ] = 10;
+    vint [ 1 ] = 20;
+    vint [ 2 ] = 30;
+    vint [ 3 ] = 40;
+    vint [ 4 ] = 50;
+    vint [ 5 ] = 60;
+    vint [ 6 ] = 70;
+    vint [ 7 ] = 80;
+    vint [ 8 ] = 90;
+    vint [ 9 ] = 100;
+
     
+    // Display elements of the vector:
+    vector< int >::iterator it;
+    cout << "\n\nSTL Iterators";
+    for (it = vint.begin(); it != vint.end(); ++it)
+    {
+      cout << "\n" << *it;
+    }
 
     /****COSC-1437*** Stack*/
 
