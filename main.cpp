@@ -30,7 +30,7 @@ class MyClassVector1
 
 int main() 
 {
-    /****Section_Name***Vectors*/ 
+    /****COSC-1437***Vectors*/ 
     //Write the base code for: 5. std::vector example
     vector<double> vd; //vd elments are floating point numbers
     vector<int> vi; //vi elements are integer numbers 
@@ -60,17 +60,32 @@ int main()
    {
      cout << vals << endl; 
    }
-   cout << "\nAnother way to print vector: " << endl; 
+   cout << "\nAnother way to print vectors_vd: " << endl; 
    for(int i = 0; i < vd.size(); i++)
    {
      cout << vd[i] << endl; 
    }
 
-    //display the 3 elements in the vi vector
+   //display the 3 elements in the vi vector
+   cout << "\nValues in vi: \n";
+   for(int vals : vi)
+   {
+     cout << vals << endl;
+   } 
+   cout << "\nAnother way to print vectors_vi: " << endl;
+   for(int i = 0; i < vi.size(); i++)
+   {
+     cout << vi[i] << endl;
+   }
 
    // display the 3 elements in the vs vector
+   cout << "\nValues in vs: \n";
+   for(string vals : vs)
+   {
+     cout << vals << endl;
+   } 
 
-    /****Section_Name***Vector_as_Class_Member*/ 
+    /****COSC-1437***Vector_as_Class_Member*/ 
     //Credit https://www.geeksforgeeks.org/passing-vector-constructor-c/
 
    cout << "\nVector_as_Class_Member" << endl; 
@@ -82,40 +97,40 @@ int main()
       
       //Continue with MyClassVector2 and MyClassVector3
 
-    /****Section_Name***STL_Iterators*/ 
+    /****COSC-1437***STL_Iterators*/ 
     
 
-    /****Section_Name*** Stack*/
+    /****COSC-1437*** Stack*/
 
 
     //Write comments that help one better understand what the code is doing.
 
-    /****Section_Name**** Set*/
+    /****COSC-1437**** Set*/
     //Write the code as presented in: 3. std::set
 
     //Write comments that help one better understand what the code is doing.
 
-    /****Section_Name****Pair_Structure*/
+    /****COSC-1437****Pair_Structure*/
     //Write the code as presented in: 4. std::pair structure
 
     //Write comments that help one better understand what the code is doing.
 
-    /****Section_Name**** Map_Insert*/
+    /****COSC-1437**** Map_Insert*/
     //Write the code as presented in: 14. std::map::insert
 
     //Write comments that help one better understand what the code is doing.
 
-    /****Section_Name****Map_Summary*/
+    /****COSC-1437****Map_Summary*/
     //Write the code as presented in: 16. Map summary
 
     //Write comments that help one better understand what the code is doing.
 
-    /****Section_Name**** Sort_Algorithm*/
+    /****COSC-1437**** Sort_Algorithm*/
     //Write the code as presented in: 23. sort example
 
     //Write comments that help one better understand what the code is doing.
 
-    /****Section_Name****Predicate_Algorithm*/
+    /****COSC-1437****Predicate_Algorithm*/
     //Write the code as presented in: 25. count_if and predicate function
 
     //Write comments that help one better understand what the code is doing. 
