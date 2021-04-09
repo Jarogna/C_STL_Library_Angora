@@ -6,6 +6,9 @@ create a single main.cpp that contains code samples and implementations of each 
 #include <vector>
 #include <algorithm> 
 #include <string>
+#include <cassert>
+#include <stack>
+#include <set>
 using namespace std; 
 
 //Credit https://www.geeksforgeeks.org/passing-vector-constructor-c/ clarifications added
@@ -136,6 +139,7 @@ int main()
             vec3.push_back(i); 
         MyClassVector1 obj3(vec); 
         obj.print(); 
+   
     /****COSC-1437***STL_Iterators*/ 
     vector< int > vint(10);
     vint [ 0 ] = 10;
@@ -152,21 +156,45 @@ int main()
     
     // Display elements of the vector:
     vector< int >::iterator it;
-    cout << "\n\nSTL Iterators";
     for (it = vint.begin(); it != vint.end(); ++it)
     {
       cout << "\n" << *it;
     }
 
     /****COSC-1437*** Stack*/
+    // A stack is a container that permits to insert and extract its elements only from the top of the container.
+    stack < int > st;
 
+    st.push( 100 );                 // Push number on the stack
+    assert( st.size() == 1 );       // Verify 1 element is on the stack
+    assert( st.top() == 100);       // Verify element value  
 
-    //Write comments that help one better understand what the code is doing.
+    st.top() = 456;                 // Assign new value
+    assert( st.top() == 456 );
+
+    st.pop();                       // Remove element
+    assert( st.empty() == true );
+
 
     /****COSC-1437**** Set*/
-    //Write the code as presented in: 3. std::set
+    // A set is a container that holds unique elements
+    set< int > iset;             // Set of unique interger numbers
 
-    //Write comments that help one better understand what the code is doing.
+    iset.insert( 11 );           // Populate set with some values
+    iset.insert( -11 );
+    iset.insert( 55 );
+    iset.insert( 22 );
+    if ( iset.find( 55 ) != iset.end() )  // Is value already stored?
+    {
+      iset.insert( 55 );
+    }
+    assert( iset.size() == 4 );   // Sanity check :-)
+    set< int >::iterator ist;
+    for ( ist = iset.begin(); ist != iset.end(); ist++ )
+    {
+      cout << "\n" << *ist;
+    }
+
 
     /****COSC-1437****Pair_Structure*/
     //Write the code as presented in: 4. std::pair structure
