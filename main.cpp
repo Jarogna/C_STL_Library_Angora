@@ -252,14 +252,22 @@ int main()
 
 
     /****COSC-1437**** Sort_Algorithm*/
-    //Write the code as presented in: 23. sort example
-
-    //Write comments that help one better understand what the code is doing.
+    // Sort the range between two iterators
+    // Iterators must be random access
+    // Items pointed to must have operator <
+    int arr[ 100 ];
+    sort( arr, arr + 100 );
+    vector v1;
+    sort( v1.begin(), v1.end() );
 
     /****COSC-1437****Predicate_Algorithm*/
-    //Write the code as presented in: 25. count_if and predicate function
+    bool less_than_7( int value )
+    {
+      return value < 7;
+    }
 
-    //Write comments that help one better understand what the code is doing. 
+    vector< int > v1;
+    int count_less = std::count_if( v1.begin(), v1.end(), less_than_7 );
 
-      return 0; 
+    return 0; 
  }
